@@ -1,0 +1,54 @@
+    <div class="m-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="title">
+                        <h1>Employee List</h1>
+                    </div>
+                    <div class="create my-auto">
+                        <a href="/employee/create" class="btn btn-primary">Create Student</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered" id="employee_list">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Location</th>
+                                <th>Photo</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <% employees.forEach(employee => { %>
+                            <tr>
+                                <td>#1</td>
+                                <td><%= employee.name %> </td>
+                                <td><%= employee.email %> </td>
+                                <td><%= employee.phone %> </td>
+                                <td><%= employee.location %> </td>
+                                <td>
+                                    <% if (employee.photo == 'avatar.jpg') { %>
+                                        <img class="employee_img" src="/images/static/avatar.jpg" alt="">
+                                        <% } else { %>
+                                            <img class="employee_img" src="./images/employees/<%= employee.photo %> " alt="">
+                                    <% } %>
+                                    
+                                </td>
+                                <td>
+                                    <a href="/employee/<%= employee.id %>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                    <a href="/employee/edit/<%= employee.id %>" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a href="/employee/delete/<%= employee.id %>" class="btn btn-danger btn-sm" id="employeeDeleteBtn"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

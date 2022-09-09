@@ -1,0 +1,25 @@
+<div class="col-md-8 offset-md-2 text-center my-5">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <div>
+                <h1>Employee Data</h1>
+            </div>
+            <div class="my-auto">
+                <a href="/employee" class="btn btn-primary">Employee List</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <h1><%= employee.name %> </h1>
+            <p><%= employee.email %> </p>
+            <p><%= employee.phone %> </p>
+            <p><%= employee.location %> </p>
+            <div>
+                <% if (employee.photo == 'avatar.jpg') { %>
+                    <img src="/images/static/avatar.jpg" width="200px" height="200px" alt="">
+                    <% } else { %>
+                        <img src="/images/employees/<%= employee.photo %>" width="200px" height="200px" alt="">
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

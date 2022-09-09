@@ -1,0 +1,51 @@
+<div class="col-md-12 my-5">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <div class="title">
+                <h1>Employee Edit</h1>
+            </div>
+            <div class="index my-auto">
+                <a href="/employee" class="btn btn-primary">Employee List</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <form action="/employee/update/<%= employee.id %>" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" value="<%= employee.name %> " required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" name="email" id="email" class="form-control" value="<%= employee.email %> " required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">phone</label>
+                    <input type="text" name="phone" id="phone" class="form-control" value="<%= employee.phone %> " required>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="form-label">Location</label>
+                    <select name="location" class="form-control" id="" required>
+                        <option <% if (employee.location == 'Not Selected') { %> Selected <% } %> value="Not Selected">--Select--</option>
+                        <option  <% if (employee.location == 'dhaka') { %> Selected <% } %> value="dhaka">Dhaka</option>
+                        <option  <% if (employee.location == 'gazipur') { %> Selected <% } %> value="gazipur">gazipur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="form-label">Photo</label>
+                   <div class="employe_edit_img_container">
+                    <% if (employee.photo == 'avatar.jpg') { %>
+                        <img src="/images/static/avatar.jpg" alt="" id="load_photo">
+                        <% } else { %>
+                            <img src="/images/employees/<%= employee.photo %>" alt="" id="load_photo">
+                    <% } %>
+                   </div>
+                     
+                    <input type="file" name="photo" id="photo" class="form-control create_employee">
+                </div>
+                <div class="form-group my-3">
+                    <input type="submit" value="Update Data" class="btn btn-info float-end">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

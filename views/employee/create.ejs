@@ -1,0 +1,46 @@
+<div class="col-md-12 my-5">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <div class="title">
+                <h1>Employee Create</h1>
+            </div>
+            <div class="index my-auto">
+                <a href="/employee" class="btn btn-primary">Employee List</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <form action="/employee/store" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">phone</label>
+                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter your phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="form-label">Location</label>
+                    <select name="location" class="form-control" required>
+                        <option value="Not Selected">--Select--</option>
+                        <option value="dhaka">Dhaka</option>
+                        <option value="gazipur">gazipur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo</label>
+                    <div class="photo_preview_box">
+                        <img src="/images/static/no-image.jpg" id="load_photo">
+                    </div>
+                    <input type="file" name="photo" id="photo" class="form-control create_employee">
+                </div>
+                <div class="form-group my-3">
+                    <input type="submit" value="Store Data" class="btn btn-info float-end">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
